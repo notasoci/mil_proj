@@ -1,0 +1,6 @@
+<h1>Milicia Bolivariana ADI 223</h1>
+<ul>
+  {% for miliciano in todos_los_milicianos_list %}
+    <li>({{ miliciano.id }}) {{ miliciano.cedula }} {{ miliciano.rango }}- {{ miliciano.apellidos }}, {{ miliciano.nombres }}</li>
+  {% endfor %}    
+</ul>

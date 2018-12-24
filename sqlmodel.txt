@@ -1,0 +1,22 @@
+BEGIN;
+--
+-- Create model Miliciano
+--
+CREATE TABLE "milicia_miliciano" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "cedula" integer NOT NULL, "apellidos" varchar(30) NOT NULL, "nombres" varchar(30) NOT NULL, "rango" varchar(20) NOT NULL, "fecha_nacimiento" datetime NOT NULL, "fecha_ingreso" datetime NOT NULL, "cedula_pareja" integer NOT NULL, "apellidos_pareja" varchar(30) NOT NULL, "nombres_pareja" varchar(30) NOT NULL, "miliciana_pareja" bool NOT NULL, "uniforme_zamorano" bool NOT NULL, "uniforme_miliciano" bool NOT NULL, "uniforme_camuflaje" bool NOT NULL, "activo" bool NOT NULL, "observaciones" varchar(200) NOT NULL, "fecha_registro" datetime NOT NULL, "registrador" varchar(12) NOT NULL);
+--
+-- Create index milicia_mil_cedula_bba8bb_idx on field(s) cedula, apellidos, cedula_pareja, apellidos_pareja of model miliciano
+--
+CREATE INDEX "milicia_mil_cedula_bba8bb_idx" ON "milicia_miliciano" ("cedula", "apellidos", "cedula_pareja", "apellidos_pareja");
+--
+-- Create index cedula_idx on field(s) cedula of model miliciano
+--
+CREATE INDEX "cedula_idx" ON "milicia_miliciano" ("cedula");
+--
+-- Create index apellidos_idx on field(s) apellidos of model miliciano
+--
+CREATE INDEX "apellidos_idx" ON "milicia_miliciano" ("apellidos");
+--
+-- Create index cedula_pareja_idx on field(s) cedula_pareja of model miliciano
+--
+CREATE INDEX "cedula_pareja_idx" ON "milicia_miliciano" ("cedula_pareja");
+COMMIT;
